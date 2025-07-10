@@ -1,0 +1,51 @@
+{
+  "name": "Yapi-MCP",
+  "version": "1.0.0",
+  "description": "Yapi MCP server",
+  "author": "zeke yang",
+  "main": "build/index.js",
+  "type": "module",
+  "keywords": [
+    "yapi",
+    "mcp",
+    "server"
+  ],
+  "license": "ISC",
+  "bin": {
+    "yapi-mcp": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeke-yang/yapi-mcp.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "cross-env NODE_ENV=development tsup --watch",
+    "dev:cli": "cross-env NODE_ENV=development tsup --watch -- --stdio",
+    "start": "node build/cli.js",
+    "start:cli": "cross-env NODE_ENV=cli node build/cli.js",
+    "inspect": "pnpx @modelcontextprotocol/inspector"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.2",
+    "chalk": "^5.4.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "16.4.7",
+    "express": "^5.1.0",
+    "hmacsha1": "^1.0.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.7",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
